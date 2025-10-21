@@ -1,0 +1,9 @@
+{% extends "master.html" %} {% block title %} Details à propos de {{
+etudiant.prenom }} {{ etudiant.nom }} {% endblock %} {% block content %}
+<h1>{{ etudiant.prenom }} {{ etudiant.nom }}</h1>
+
+<p>Téléphone: {{ etudiant.telephone }}</p>
+<p>Adresse: {{ etudiant.adresse }}</p>
+<p>Date de naissance: {{ etudiant.date }}</p>
+
+{% include "footer.html" %} {% endblock %}

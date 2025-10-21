@@ -1,0 +1,36 @@
+{% extends "master.html" %} {% block title %} liste etudiants {% endblock %}
+{%block content %}
+
+<h1 class="bg-info text-white rounded text-center h1 p-2 m-2">
+  La liste des étudiants
+</h1>
+
+<table class="table table-hover table-hover table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Naissancee</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for etudiant in etudiants %}
+    <tr>
+      <th scope="row">{{ etudiant.id }}</th>
+
+      <td>{{ etudiant.prenom }}</td>
+      <td>{{ etudiant.nom }}</td>
+      <td>{{ etudiant.adresse }}</td>
+      <td>{{ etudiant.date }}</td>
+      <td>
+        <a href="myFirstApp/detail/{{etudiant.id}}">Détails</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% include "footer.html" %} {% endblock %}
